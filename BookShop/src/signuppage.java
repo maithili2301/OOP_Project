@@ -45,13 +45,14 @@ public class signuppage {
 		initialize();
 		Connect();
 	}
-	
+// 	for connection and preparestatement i have importedt java.sql.*; 
 	Connection con;
 	PreparedStatement pst; 
 //	Statement stm=null;
+	
 	 public void Connect()
 	 {
-		 
+// 		 this is database connection
 		 try
 		 { Class.forName("com.mysql.jdbc.Driver");
 		  con= DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
@@ -124,6 +125,7 @@ public class signuppage {
 		JButton btnNewButton = new JButton("Save");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+// 				after clicking save button info is saved in database
 				String StuName, Username,Password;
 				StuName=textName.getText();
 				
@@ -141,7 +143,7 @@ public class signuppage {
 					pst.setString(3,Password);
 					pst.executeUpdate();
 					JOptionPane.showMessageDialog(null, "Record saved succesfully");
-					
+// 					by following code text boxes will be empty after saving previous records
 					textName.setText("");
 					
 					textUsername.setText("");
@@ -167,6 +169,7 @@ public class signuppage {
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+// 				after clicking back we will jump to homepage
 				homepage hp2=new homepage();
 				hp2.main(null);
 			}
