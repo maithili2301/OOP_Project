@@ -78,6 +78,7 @@ public class adminloginpage {
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+// 				this code is for jumping from this page to sign in page for admin
 				signinforadmin sia1 =new signinforadmin();
 				sia1.SignInAdminScreen();
 			}
